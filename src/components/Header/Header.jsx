@@ -2,6 +2,8 @@ import React from 'react'
 
 import Socials from './Socials'
 
+import colors from '../../scripts/colors'
+
 import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -40,28 +42,36 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = (props) => {
   const classes = useStyles();
-  const { bgColor, iconColor, lightMode, toggleLightMode } = props
+  const { lightMode, toggleLightMode } = props
+
+  const getBGColor = () => {
+    return (lightMode ? colors.white : colors.black)
+  }
+
+  const getFontColor = () => {
+    return (lightMode ? colors.black : colors.white)
+  }
 
   return (
     <div
       className={classes.layout}
-      style={{backgroundColor: bgColor}}
+      style={{backgroundColor: `${getBGColor()}`}}
     >
       <BrightnessHighIcon
         className={classes.lightToggle}
-        style={{color: iconColor}}
+        style={{color: `${getFontColor()}`}}
         onClick={() => {toggleLightMode(!lightMode)}}
       />
 
       <Typography
         className={classes.title}
-        style={{color: iconColor}}
+        style={{color: `${getFontColor()}`}}
       >
         The Eutectics
       </Typography>
       <Socials
         className={classes.socials}
-        color={iconColor}
+        color={`${getFontColor()}`}
       />
     </div>
   )

@@ -13,14 +13,10 @@ const PageLayout = (props) => {
     return (lightMode ? colors.white : colors.black)
   }
 
-  const getIconColor = () => {
-    return (lightMode ? colors.black : colors.white)
-  }
-
   return (
     <div style={{backgroundColor: `${getBGColor()}`}}>
-      <Header bgColor={`${getBGColor()}`} iconColor={`${getIconColor()}`} lightMode={lightMode} toggleLightMode={setLightMode} />
-      <Footer bgColor={`${getBGColor()}`} iconColor={`${getIconColor()}`} />
+      <Header lightMode={lightMode} toggleLightMode={setLightMode} />
+      <Footer lightMode={lightMode} />
     </div>
   )
 }
