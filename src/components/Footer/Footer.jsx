@@ -18,22 +18,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = (props) => {
   const classes = useStyles()
-  const { lightMode } = props
 
-  const getBGColor = () => {
-    return (lightMode ? colors.white : colors.black)
-  }
-  const getIconColor = () => {
-    return (lightMode ? colors.black : colors.white)
-  }
+  const { bgColor, iconColor } = props
 
   return(
     <div
       className={classes.layout}
-      style={{backgroundColor: `${getBGColor()}`}}
+      style={{backgroundColor: bgColor}}
     >
-      <Socials color={`${getIconColor()}`} />
-      <EPK color={`${getIconColor()}`} />
+
+      <Socials color={iconColor} />
+      <EPK color={iconColor} />
     </div>
   )
 }

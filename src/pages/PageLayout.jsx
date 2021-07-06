@@ -9,14 +9,14 @@ const PageLayout = (props) => {
   // lightMode vs darkMode
   const [lightMode, setLightMode] = useState(false)
 
-  const getBGColor = () => {
-    return (lightMode ? colors.white : colors.black)
-  }
+  const BGColor = lightMode ? colors.white : colors.black
+
+  const iconColor = lightMode ? colors.black : colors.white
 
   return (
-    <div style={{backgroundColor: `${getBGColor()}`}}>
-      <Header lightMode={lightMode} toggleLightMode={setLightMode} />
-      <Footer lightMode={lightMode} />
+    <div style={{backgroundColor: `${BGColor}`}}>
+      <Header bgColor={`${BGColor}`} iconColor={`${iconColor}`} lightMode={lightMode} toggleLightMode={setLightMode} />
+      <Footer bgColor={`${BGColor}`} iconColor={`${iconColor}`} />
     </div>
   )
 }

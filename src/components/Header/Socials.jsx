@@ -85,11 +85,11 @@ const EmailHeader = (props) => {
     <div className={classes.emailButtonLayout}>
       <MailIcon
         className={classes.mailIcon}
-        style={{color: `${color}`}}
+        style={{color: color}}
       />
       <Typography
         className={classes.contactTypography}
-        style={{color: `${color}`}}
+        style={{color: color}}
       >
         Contact Us
       </Typography>
@@ -105,15 +105,15 @@ const Socials = (props) => {
     <div className={classes.layout}>
       <InstagramIcon
         className={classes.instagram}
-        style={{color: `${color}`}}
+        style={{color: color}}
       />
       <FacebookIcon
         className={classes.facebook}
-        style={{color: `${color}`}}
+        style={{color: color}}
       />
       <YouTubeIcon
         className={classes.youtube}
-        style={{color: `${color}`}}
+        style={{color: color}}
       />
       <EmailHeader
         className={classes.email}
