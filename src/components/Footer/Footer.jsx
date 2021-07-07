@@ -1,7 +1,5 @@
 import React from 'react'
 
-import colors from '../../scripts/colors'
-
 import Socials from './Socials'
 import EPK from './EPK'
 
@@ -11,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     display: 'grid',
     gridTemplateColumns: '15vw 35vw 35vw 15vw',
-    width: '100vw',
+    width: '100%',
     height: '20vh',
   },
 }))
