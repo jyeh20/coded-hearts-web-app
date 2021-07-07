@@ -81,34 +81,29 @@ const Socials = (props) => {
   return (
     <div
       className={classes.layout}
+      style={{color: color}}
     >
       <InstagramIcon
         className={classes.instagramIcon}
-        style={{color: color}}
       />
       <Typography
         className={classes.instagramText}
-        style={{color: color}}
       >
         Instagram
       </Typography>
       <FacebookIcon
         className={classes.facebookIcon}
-        style={{color: color}}
       />
       <Typography
         className={classes.facebookText}
-        style={{color: color}}
       >
         Facebook
       </Typography>
       <YouTubeIcon
         className={classes.youtubeIcon}
-        style={{color: color}}
       />
       <Typography
         className={classes.youtubeText}
-        style={{color: color}}
       >
         Youtube
       </Typography>

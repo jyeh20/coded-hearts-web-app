@@ -1,7 +1,5 @@
 import React from 'react'
 
-import colors from '../../scripts/colors'
-
 import Socials from './Socials'
 import EPK from './EPK'
 
@@ -11,29 +9,24 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     display: 'grid',
     gridTemplateColumns: '15vw 35vw 35vw 15vw',
-    width: '100vw',
+    width: '100%',
     height: '20vh',
   },
 }))
 
 const Footer = (props) => {
   const classes = useStyles()
-  const { lightMode } = props
 
-  const getBGColor = () => {
-    return (lightMode ? colors.white : colors.black)
-  }
-  const getIconColor = () => {
-    return (lightMode ? colors.black : colors.white)
-  }
+  const { bgColor, iconColor } = props
 
   return(
     <div
       className={classes.layout}
-      style={{backgroundColor: `${getBGColor()}`}}
+      style={{backgroundColor: bgColor}}
     >
-      <Socials color={`${getIconColor()}`} />
-      <EPK color={`${getIconColor()}`} />
+
+      <Socials color={iconColor} />
+      <EPK color={iconColor} />
     </div>
   )
 }

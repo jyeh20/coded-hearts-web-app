@@ -44,24 +44,21 @@ const EPK = (props) => {
   const { color } = props
 
   return (
-    <div className={classes.layout}>
+    <div className={classes.layout} style={{color: color}}>
       <div className={classes.emailDiv}>
         <Typography
           className={classes.text}
-          style={{color: color}}
         >
           Email
         </Typography>
         <Typography
           className={classes.text}
-          style={{color: color}}
         >
           EutecticBand@gmail.com
         </Typography>
       </div>
       <Typography
         className={classes.epk}
-        style={{color: color}}
       >
         Our EPK
       </Typography>
