@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     display: 'grid',
     gridTemplateColumns: '33% 33% 33%',
-    width: '100vw',
+    width: '100%',
     height: '10vh',
   },
 
@@ -45,17 +45,16 @@ const Header = (props) => {
   return (
     <div
       className={classes.layout}
-      style={{backgroundColor: bgColor}}
+      style={{backgroundColor: bgColor,
+              color: iconColor}}
     >
       <BrightnessHighIcon
         className={classes.lightToggle}
-        style={{color: iconColor}}
         onClick={() => {toggleLightMode(!lightMode)}}
       />
 
       <Typography
         className={classes.title}
-        style={{color: iconColor}}
       >
         The Eutectics
       </Typography>

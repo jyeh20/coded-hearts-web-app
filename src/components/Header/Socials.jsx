@@ -51,12 +51,16 @@ const useStyles = makeStyles((theme) => ({
   emailButtonLayout: {
     margin: 'auto',
     height: '60%',
+    minWidth: '160px',
     width: '80%',
     backgroundColor: colors.blue,
     display: 'grid',
     gridTemplateColumns: '25% auto',
     borderRadius: 10,
     cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: colors.hoverBlue
+    }
   },
 
   mailIcon: {
@@ -82,14 +86,12 @@ const EmailHeader = (props) => {
   const { color } = props
 
   return (
-    <div className={classes.emailButtonLayout}>
+    <div className={classes.emailButtonLayout} style={{color: color}}>
       <MailIcon
         className={classes.mailIcon}
-        style={{color: color}}
       />
       <Typography
         className={classes.contactTypography}
-        style={{color: color}}
       >
         Contact Us
       </Typography>
@@ -102,18 +104,15 @@ const Socials = (props) => {
   const { color } = props
 
   return (
-    <div className={classes.layout}>
+    <div className={classes.layout} style={{color: color}}>
       <InstagramIcon
         className={classes.instagram}
-        style={{color: color}}
       />
       <FacebookIcon
         className={classes.facebook}
-        style={{color: color}}
       />
       <YouTubeIcon
         className={classes.youtube}
-        style={{color: color}}
       />
       <EmailHeader
         className={classes.email}
