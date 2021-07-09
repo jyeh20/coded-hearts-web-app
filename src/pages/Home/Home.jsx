@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import cover from '../../assets/cover-photo.jpg'
 import PerformanceTable from '../../components/Home/PerformanceTable'
@@ -9,46 +9,49 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import Typography from '@material-ui/core/Typography'
 
-const useStyles = makeStyles((theme) => ({
-  layout: {
-    paddingBottom: '10vh',
-  },
-
-  image: {
-    zIndex: -1,
-    width: '100%',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-  },
-
-  body: {
-    marginTop: '80vh',
-  },
-
-  title: {
-    fontFamily: 'Cambay',
-    fontSize: '10vh',
-    paddingTop: '14vh',
-    paddingBottom: '2vh',
-    textAlign: 'center',
-  },
-
-  bodyText: {
-    fontFamily: 'Cambay',
-    fontSize: '3vh',
-    textAlign: 'center',
-    margin: 'auto',
-    width: '70%',
-  }
-}))
-
 const Home = (props) => {
-  const classes = useStyles()
   const { lightMode, tableColor, bgColor, iconColor, videoLink } = props
 
+  const useStyles = makeStyles((theme) => ({
+    layout: {
+      paddingBottom: '10vh',
+      backgroundColor: bgColor,
+      color: iconColor,
+    },
+
+    image: {
+      zIndex: -1,
+      width: '100%',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+    },
+
+    body: {
+      marginTop: '80vh',
+    },
+
+    title: {
+      fontFamily: 'Cambay',
+      fontSize: '10vh',
+      paddingTop: '14vh',
+      paddingBottom: '2vh',
+      textAlign: 'center',
+    },
+
+    bodyText: {
+      fontFamily: 'Cambay',
+      fontSize: '3vh',
+      textAlign: 'center',
+      margin: 'auto',
+      width: '70%',
+    }
+  }))
+
+  const classes = useStyles()
+
   return (
-    <div className={classes.layout} style={{backgroundColor: bgColor, color: iconColor}}>
+    <div className={classes.layout}>
       <img className={classes.image} src={cover} />
       <div className={classes.body}>
         <Typography className={classes.title}>

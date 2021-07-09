@@ -1,5 +1,9 @@
 import React from 'react'
 
+import links from '../../scripts/links'
+
+import SocialButton from './SocialButton'
+
 import { makeStyles } from '@material-ui/core/styles';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -7,106 +11,122 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles((theme) => ({
-  layout: {
-    gridColumnStart: 2,
-    gridColumnEnd: 3,
-    display: 'grid',
-    gridTemplateRows: '33% 33% 33%',
-    gridTemplateColumns: '50% 50%',
-    margin: 'auto',
-    height: '80%',
-    width: '60%',
-  },
-
-  instagramIcon: {
-    gridRowStart: 1,
-    gridRowEnd: 2,
-    gridColumnStart: 1,
-    gridColumnEnd: 2,
-    margin: 'auto',
-  },
-
-  instagramText: {
-    gridRowStart: 1,
-    gridRowEnd: 2,
-    gridColumnStart: 2,
-    gridColumnEnd: 3,
-    margin: 'auto',
-    fontFamily: 'Cambay',
-    fontSize: '2vh'
-  },
-
-  facebookIcon: {
-    gridRowStart: 2,
-    gridRowEnd: 3,
-    gridColumnStart: 1,
-    gridColumnEnd: 2,
-    margin: 'auto',
-  },
-
-  facebookText: {
-    gridRowStart: 2,
-    gridRowEnd: 3,
-    gridColumnStart: 2,
-    gridColumnEnd: 3,
-    margin: 'auto',
-    fontFamily: 'Cambay',
-    fontSize: '2vh'
-  },
-
-  youtubeIcon: {
-    gridRowStart: 3,
-    gridRowEnd: 4,
-    gridColumnStart: 1,
-    gridColumnEnd: 2,
-    margin: 'auto',
-  },
-
-  youtubeText: {
-    gridRowStart: 3,
-    gridRowEnd: 4,
-    gridColumnStart: 2,
-    gridColumnEnd: 3,
-    margin: 'auto',
-    fontFamily: 'Cambay',
-    fontSize: '2vh'
-  },
-}))
-
 const Socials = (props) => {
-  const classes = useStyles()
   const { color } = props
+
+  const useStyles = makeStyles((theme) => ({
+    layout: {
+      color: color,
+      gridColumnStart: 2,
+      gridColumnEnd: 3,
+      display: 'grid',
+      gridTemplateRows: '33% 33% 33%',
+      margin: 'auto',
+      height: '80%',
+      width: '60%',
+    },
+
+    instagramSocialButton: {
+      color: color,
+      gridRowStart: 1,
+      gridRowEnd: 2,
+      margin: 'auto',
+      display: 'grid',
+      gridTemplateColumns: '25% 75%',
+    },
+
+    facebookSocialButton: {
+      color: color,
+      gridRowStart: 2,
+      gridRowEnd: 3,
+      margin: 'auto',
+      display: 'grid',
+      gridTemplateColumns: '25% 75%',
+    },
+
+    youtubeSocialButton: {
+      color: color,
+      gridRowStart: 3,
+      gridRowEnd: 4,
+      margin: 'auto',
+      display: 'grid',
+      gridTemplateColumns: '25% 75%',
+    },
+
+    icon: {
+      gridColumnStart: 3,
+      gridColumnEnd: 4,
+      margin: 'auto',
+    },
+
+    text: {
+      gridColumnStart: 2,
+      gridColumnEnd: 3,
+      textAlign: 'center',
+      margin: 'auto',
+      fontFamily: 'Cambay',
+      fontSize: '2vh'
+    },
+  }))
+  const classes = useStyles()
 
   return (
     <div
       className={classes.layout}
-      style={{color: color}}
     >
-      <InstagramIcon
-        className={classes.instagramIcon}
+      <SocialButton
+        color={color}
+        className={classes.instagramSocialButton}
+        link={links.instagram}
+        icon={
+          <InstagramIcon
+            className={classes.icon}
+          />
+        }
+        title={
+          <Typography
+            className={classes.text}
+          >
+            Instagram
+          </Typography>
+        }
       />
-      <Typography
-        className={classes.instagramText}
-      >
-        Instagram
-      </Typography>
-      <FacebookIcon
-        className={classes.facebookIcon}
+
+      <SocialButton
+        color={color}
+        className={classes.facebookSocialButton}
+        link={links.facebook}
+        icon={
+          <FacebookIcon
+            className={classes.icon}
+          />
+        }
+        title={
+          <Typography
+            className={classes.text}
+          >
+            Facebook
+          </Typography>
+        }
       />
-      <Typography
-        className={classes.facebookText}
-      >
-        Facebook
-      </Typography>
-      <YouTubeIcon
-        className={classes.youtubeIcon}
+
+      <SocialButton
+        color={color}
+        className={classes.youtubeSocialButton}
+        link={links.youtube}
+        icon={
+          <YouTubeIcon
+            className={classes.icon}
+          />
+        }
+        title={
+          <Typography
+            className={classes.text}
+          >
+            YouTube
+          </Typography>
+        }
       />
-      <Typography
-        className={classes.youtubeText}
-      >
-        Youtube
-      </Typography>
     </div>
   )
 }
