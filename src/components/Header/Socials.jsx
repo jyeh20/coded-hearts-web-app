@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import colors from '../../scripts/colors';
 import links from '../../scripts/links'
 
+import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -22,8 +23,6 @@ const EmailHeader = (props) => {
       minWidth: '160px',
       width: '80%',
       backgroundColor: colors.blue,
-      display: 'grid',
-      gridTemplateColumns: '25% auto',
       borderRadius: 10,
       color: color,
       cursor: 'pointer',
@@ -52,16 +51,9 @@ const EmailHeader = (props) => {
   const classes = useStyles()
 
   return (
-    <div className={classes.emailButtonLayout}>
-      <MailIcon
-        className={classes.mailIcon}
-      />
-      <Typography
-        className={classes.contactTypography}
-      >
+    <Button className={classes.emailButtonLayout} href="/contact" startIcon={<MailIcon />}>
         Contact Us
-      </Typography>
-    </div>
+    </Button>
   )
 }
 

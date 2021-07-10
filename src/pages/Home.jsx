@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import cover from '../../assets/cover-photo.jpg'
-import PerformanceTable from '../../components/Home/PerformanceTable'
-import YouTubeContainer from '../../components/Home/YouTubeContainter'
-import ContactButton from '../../components/Home/ContactButton'
+import cover from '../assets/cover-photo.jpg'
+import PerformanceTable from '../components/Home/PerformanceTable'
+import YouTubeContainer from '../components/Home/YouTubeContainter'
+import ContactButton from '../components/Home/ContactButton'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -45,6 +45,10 @@ const Home = (props) => {
       textAlign: 'center',
       margin: 'auto',
       width: '70%',
+    },
+
+    button: {
+      margin: 'auto',
     }
   }))
 
@@ -77,7 +81,7 @@ const Home = (props) => {
           Check out our YouTube!
         </Typography>
         <YouTubeContainer lightMode={lightMode} videoLink={videoLink} />
-        <ContactButton iconColor={iconColor} />
+        <ContactButton className={classes.button} iconColor={iconColor} />
       </div>
     </div>
   )
