@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import cover from '../../assets/cover-photo.jpg'
-import PerformanceTable from '../../components/Home/PerformanceTable'
-import YouTubeContainer from '../../components/Home/YouTubeContainter'
-import ContactButton from '../../components/Home/ContactButton'
+import cover from '../assets/cover-photo.jpg'
+import PerformanceTable from '../components/Home/PerformanceTable'
+import YouTubeContainer from '../components/Home/YouTubeContainter'
+import ContactButton from '../components/Home/ContactButton'
 
 import { makeStyles } from '@material-ui/core/styles'
 

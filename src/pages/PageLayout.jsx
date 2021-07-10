@@ -13,7 +13,8 @@ import {
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import NavBar from '../components/NavBar/Navbar'
-import Home from './Home/Home'
+import Home from './Home'
+import Contact from './Contact';
 
 const PageLayout = (props) => {
   // lightMode vs darkMode
@@ -83,8 +84,19 @@ const PageLayout = (props) => {
                 bgColor={BGColor}
                 iconColor={iconColor}
                 videoLink="https://www.youtube.com/embed/d5rdoVyuDZk"
-              />)
-            }
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/contact"
+            render={() => (
+              <Contact
+                lightMode={lightMode}
+                bgColor={BGColor}
+                iconColor={iconColor}
+              />
+            )}
           />
         </Switch>
         <Footer bgColor={BGColor} iconColor={iconColor} />
