@@ -7,6 +7,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles'
 
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 
 const Contact = (props) => {
   const { lightMode, bgColor } = props
@@ -45,16 +46,13 @@ const Contact = (props) => {
       gridColumnEnd: 2,
       gridRowStart: 1,
       gridRowEnd: 2,
-      borderRadius: 5
+      borderRadius: 10
     },
 
     email: {
       marginLeft: 'auto',
       marginBottom: 'auto',
       backgroundColor: colors.white,
-      borderColor: colors.blue,
-      borderStyle: 'solid',
-      borderWidth: '2px',
       width: '80%',
       gridColumnStart: 2,
       gridColumnEnd: 3,
@@ -68,15 +66,12 @@ const Contact = (props) => {
       marginRight: 'auto',
       marginBottom: 'auto',
       backgroundColor: colors.white,
-      borderColor: colors.blue,
-      borderStyle: 'solid',
-      borderWidth: '2px',
       width:'99%',
       gridColumnStart: 1,
       gridColumnEnd: 3,
       gridRowStart: 2,
       gridRowEnd: 3,
-      borderRadius: 5
+      borderRadius: 10
     },
 
     send: {
@@ -86,11 +81,36 @@ const Contact = (props) => {
       gridColumnEnd: 3,
       gridRowStart: 3,
       gridRowEnd: 4,
+    },
+
+    thankyou: {
+      margin: 'auto',
+      color: lightMode ? colors.black : colors.white,
+      display: 'grid',
+      gridTemplateRows: '70% 30%',
+      height: '40vh',
+      width: '60%',
+    },
+
+    thankMessage: {
+      margin: 'auto',
+      gridRowStart: 1,
+      gridRowEnd: 2,
+      fontFamily: 'Cambay',
+      textAlign: 'center',
+      fontSize: '5vh'
+    },
+
+    homeButton: {
+      margin: 'auto',
+      gridRowStart: 2,
+      gridRowEnd: 3,
+      width: '40%',
     }
   }))
   const classes = useStyles()
 
-  const SendButton = withStyles({
+  const CustomButton = withStyles({
     root: {
       backgroundColor: colors.blue,
       color: lightMode ? colors.black : colors.white,
@@ -167,58 +187,71 @@ const Contact = (props) => {
     }
   }
 
-  return (
-    <div className={classes.layout}>
-      <form
-        className={classes.container}
-        onSubmit={sendMessage}
-        autoComplete="off"
-      >
-        <TextField
-          error={nameError}
-          helperText={nameError ? "Name must not be empty" : null}
-          variant="filled"
-          label="Your Name"
-          id="from_name"
-          name="from_name"
-          className={classes.name}
-          value={name}
-          onChange={handleNameChange}
-        />
-        <TextField
-          error={emailError}
-          helperText={emailError ? "Must be a valid email" : null}
-          type="email"
-          label="Your Email"
-          id="from_email"
-          name="from_email"
-          variant="filled"
-          className={classes.email}
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <TextField
-          error={messageError}
-          helperText={messageError ? "Message must not be empty" : null}
-          label="Message"
-          id="message"
-          name="message"
-          variant="filled"
-          multiline
-          rows={7}
-          className={classes.message}
-          value={message}
-          onChange={handleMessageChange}
-        />
-        <SendButton
-          className={classes.send}
-          type="submit"
-          value="Submit"
+  if (messageSent) {
+    return (
+      <div className={classes.layout}>
+        <div className={classes.thankyou}>
+          <Typography className={classes.thankMessage}>
+            Thanks for sending us a message, we'll get back to you soon!
+          </Typography>
+          <CustomButton className={classes.homeButton} href="/">
+            Back to Home
+          </CustomButton>
+        </div>
+      </div>
+    )
+  } return (
+      <div className={classes.layout}>
+        <form
+          className={classes.container}
+          onSubmit={sendMessage}
+          autoComplete="off"
         >
-          Send Message
-        </SendButton>
-      </form>
-    </div>
+          <TextField
+            error={nameError}
+            helperText={nameError ? "Name must not be empty" : null}
+            variant="filled"
+            label="Your Name"
+            id="from_name"
+            name="from_name"
+            className={classes.name}
+            value={name}
+            onChange={handleNameChange}
+          />
+          <TextField
+            error={emailError}
+            helperText={emailError ? "Must be a valid email" : null}
+            type="email"
+            label="Your Email"
+            id="from_email"
+            name="from_email"
+            variant="filled"
+            className={classes.email}
+            value={email}
+            onChange={handleEmailChange}
+          />
+          <TextField
+            error={messageError}
+            helperText={messageError ? "Message must not be empty" : null}
+            label="Message"
+            id="message"
+            name="message"
+            variant="filled"
+            multiline
+            rows={7}
+            className={classes.message}
+            value={message}
+            onChange={handleMessageChange}
+          />
+          <CustomButton
+            className={classes.send}
+            type="submit"
+            value="Submit"
+          >
+            Send Message
+          </CustomButton>
+        </form>
+      </div>
   )
 }
 
