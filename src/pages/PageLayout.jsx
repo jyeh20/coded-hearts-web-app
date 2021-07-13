@@ -16,6 +16,7 @@ import Footer from '../components/Footer/Footer'
 import NavBar from '../components/NavBar/Navbar'
 import Home from './Home'
 import Contact from './Contact';
+import EPK from './EPK';
 
 const PageLayout = () => {
   // lightMode vs darkMode
@@ -96,6 +97,17 @@ const PageLayout = () => {
             path="/contact"
             render={() => (
               <Contact
+                lightMode={lightMode}
+                bgColor={BGColor}
+                iconColor={iconColor}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/epk"
+            render={() => (
+              <EPK
                 lightMode={lightMode}
                 bgColor={BGColor}
                 iconColor={iconColor}
