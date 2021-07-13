@@ -6,6 +6,10 @@ const navItems = [
   {
     title: 'Contact',
     link: '/contact'
+  },
+  {
+    title: 'Our EPK',
+    link: '/epk'
   }
 ]
 
