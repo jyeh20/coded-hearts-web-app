@@ -12,8 +12,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 const NavbarItem = (props) => {
   const { lightMode, link, title } = props
 
-  console.log(title)
-
   const useStyles = makeStyles((theme) => ({
     item: {
       margin: 'auto',

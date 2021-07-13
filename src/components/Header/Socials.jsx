@@ -125,7 +125,6 @@ const Socials = (props) => {
     <div className={classes.layout} >
       <IconButton
         href={links.instagram}
-        onClick={() => {console.log("CLICK")}}
         className={classes.instagramIconButton}
       >
         <InstagramIcon

@@ -37,7 +37,6 @@ const PerformanceTable = (props) => {
   }))
   const classes = useStyles()
 
-  console.log(performances)
   useEffect(() => {
     performances.then((querySnapshot) => {
       setData(querySnapshot.docs)

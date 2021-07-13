@@ -5,7 +5,6 @@ const emailsRef = db.collection("emails")
 const performancesRef = db.collection("performances").orderBy("date")
 
 const writeNewEmail = (name, address, message) => {
-  console.log('writing')
   emailsRef.add({
     name: name,
     email: address,

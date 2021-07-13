@@ -35,11 +35,6 @@ const Menu = (props) => {
   }))
   const classes = useStyles()
 
-  const handleMenu = () => {
-    {toggleDrawer(true)}
-    console.log("menu clicked")
-  }
-
   return (
     <div className={classes.layout}>
       <MenuIcon

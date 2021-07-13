@@ -7,12 +7,10 @@ const varKeys = {
 }
 
 const sendEmail = (e) => {
-  console.log(varKeys)
   emailjs.sendForm(varKeys.serviceID, varKeys.templateID, e.target, varKeys.userID)
   .then(() => {
       return true
   }, (error) => {
-      console.log(error.text);
       return false
   });
 }
