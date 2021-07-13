@@ -4,12 +4,14 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const YouTubeContainer = (props) => {
   const { videoLink } = props
-  const width = (5*1920)/108
+  const height = 70
+  const width = (height*1920)/1080
   const useStyles = makeStyles((theme) => ({
     container: {
       margin: 'auto',
-      height: '50vh',
+      height: `${height}vh`,
       width: `${width}vh`,
+      marginTop: '10vh',
       marginBottom: '20vh'
     }
   }))
