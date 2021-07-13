@@ -4,10 +4,6 @@ const navItems = [
     link: '/',
   },
   {
-    title: 'About',
-    link: '/about'
-  },
-  {
     title: 'Contact',
     link: '/contact'
   }
