@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import colors from '../scripts/colors'
+import firebaseFunctions from '../firebase/firebaseUtil'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -16,10 +17,12 @@ import NavBar from '../components/NavBar/Navbar'
 import Home from './Home'
 import Contact from './Contact';
 
-const PageLayout = (props) => {
+const PageLayout = () => {
   // lightMode vs darkMode
+  const { getPerformances } = firebaseFunctions
   const [lightMode, setLightMode] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const performances = useRef(getPerformances())
 
   const useStyles = makeStyles((theme) => ({
     layout: {
@@ -84,6 +87,7 @@ const PageLayout = (props) => {
                 bgColor={BGColor}
                 iconColor={iconColor}
                 videoLink="https://www.youtube.com/embed/d5rdoVyuDZk"
+                performances={performances.current}
               />
             )}
           />

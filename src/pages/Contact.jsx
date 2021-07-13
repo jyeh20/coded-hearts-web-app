@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import colors from '../scripts/colors'
 import emailFunctions from '../scripts/emailutils'
+import firebaseFunctions from '../firebase/firebaseUtil'
 
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 
@@ -11,6 +12,7 @@ import Typography from '@material-ui/core/Typography'
 
 const Contact = (props) => {
   const { lightMode, bgColor } = props
+  const { writeNewEmail } = firebaseFunctions
   const { sendEmail } = emailFunctions
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -182,6 +184,7 @@ const Contact = (props) => {
       return
     }
 
+    writeNewEmail(name, email, message)
     if (sendEmail(e)) {
       setMessageSent(true)
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import PerformanceTableRow from '../../components/Home/PerformanceTableRow'
 import colors from '../../scripts/colors';
@@ -14,7 +14,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 const PerformanceTable = (props) => {
-  const { lightMode, tableColor, iconColor } = props
+  const { lightMode, tableColor, iconColor, performances } = props
+  const [data, setData] = useState([])
 
   const useStyles = makeStyles((theme) => ({
     tableLayout: {
@@ -36,23 +37,12 @@ const PerformanceTable = (props) => {
   }))
   const classes = useStyles()
 
-  const data = [
-    {
-      location: "Los Angeles",
-      date: '5/1',
-      time: '5:00pm - 6:00pm'
-    },
-    {
-      location: "SteelCraft",
-      date: '5/1',
-      time: '5:00pm - 6:00pm'
-    },
-    {
-      location: "Dodger Stadium",
-      date: '5/1',
-      time: '5:00pm - 6:00pm'
-    },
-  ]
+  console.log(performances)
+  useEffect(() => {
+    performances.then((querySnapshot) => {
+      setData(querySnapshot.docs)
+    })
+  }, [performances])
 
   return (
     <TableContainer component={Paper} className={classes.tableLayout}>
@@ -61,12 +51,12 @@ const PerformanceTable = (props) => {
           <TableRow>
             <TableCell className={classes.headerCell}>Location</TableCell>
             <TableCell className={classes.headerCell} align="right">Date</TableCell>
-            <TableCell className={classes.headerCell} align="right">Time</TableCell>
+            <TableCell className={classes.headerCell} align="right">Time (PST)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody style={{backgroundColor: tableColor, color: "#FFFFFF"}}>
           {data.map((row) => (
-            <PerformanceTableRow row={row} lightMode={lightMode} />
+            <PerformanceTableRow row={row.data()} lightMode={lightMode} />
           ))}
         </TableBody>
       </Table>

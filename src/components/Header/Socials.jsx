@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
+import firebaseFunctions from '../../firebase/firebaseUtil';
 
 import colors from '../../scripts/colors';
 import links from '../../scripts/links'
@@ -11,7 +12,6 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import MailIcon from '@material-ui/icons/Mail';
-import Typography from '@material-ui/core/Typography';
 
 const EmailHeader = (props) => {
   const { color } = props
@@ -59,6 +59,7 @@ const EmailHeader = (props) => {
 
 const Socials = (props) => {
   const { color } = props
+  const { incrementHeaderInstagram } = firebaseFunctions
 
   const useStyles = makeStyles((theme) => ({
     layout: {
@@ -124,6 +125,7 @@ const Socials = (props) => {
     <div className={classes.layout} >
       <IconButton
         href={links.instagram}
+        onClick={() => {console.log("CLICK")}}
         className={classes.instagramIconButton}
       >
         <InstagramIcon
