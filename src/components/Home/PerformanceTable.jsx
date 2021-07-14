@@ -22,6 +22,7 @@ const PerformanceTable = (props) => {
       margin: 'auto',
       borderRadius: '10px',
       width: '70%',
+      marginBottom: '15vh',
     },
 
     header: {

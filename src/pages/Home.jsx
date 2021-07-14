@@ -47,6 +47,7 @@ const Home = (props) => {
       textAlign: 'center',
       margin: 'auto',
       width: '70%',
+      marginBottom: '15vh',
     },
 
     button: {
