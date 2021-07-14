@@ -58,7 +58,11 @@ const Home = (props) => {
 
   return (
     <div className={classes.layout}>
-      <img className={classes.image} src={cover} />
+      <img
+        className={classes.image}
+        src={cover}
+        alt="Eutectics cover photo"
+      />
       <div className={classes.body}>
         <Typography className={classes.title}>
           About
