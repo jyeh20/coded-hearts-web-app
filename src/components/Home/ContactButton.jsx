@@ -2,7 +2,7 @@ import React from 'react'
 
 import colors from '../../scripts/colors'
 
-import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import Button from '@material-ui/core/Button'
 

@@ -61,7 +61,7 @@ const Home = (props) => {
       <img
         className={classes.image}
         src={cover}
-        alt="Eutectics cover photo"
+        alt="Eutectics cover"
       />
       <div className={classes.body}>
         <Typography className={classes.title}>

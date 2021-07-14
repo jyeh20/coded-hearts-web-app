@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
-import firebaseFunctions from '../../firebase/firebaseUtil';
 
 import colors from '../../scripts/colors';
 import links from '../../scripts/links'
@@ -59,7 +58,6 @@ const EmailHeader = (props) => {
 
 const Socials = (props) => {
   const { color } = props
-  const { incrementHeaderInstagram } = firebaseFunctions
 
   const useStyles = makeStyles((theme) => ({
     layout: {
