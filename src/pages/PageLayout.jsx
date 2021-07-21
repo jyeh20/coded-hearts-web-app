@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 
 import colors from '../scripts/colors'
 import firebaseFunctions from '../firebase/firebaseUtil'
+import links from '../scripts/links'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -87,7 +88,7 @@ const PageLayout = () => {
                 tableColor = {tableColor}
                 bgColor={BGColor}
                 iconColor={iconColor}
-                videoLink="https://www.youtube.com/embed/zoZT5HZHoF0"
+                videoLink={links.featuredVideo}
                 performances={performances.current}
               />
             )}
