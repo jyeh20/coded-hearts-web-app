@@ -31,6 +31,8 @@ const NavDrawer = (props) => {
         anchor={"left"}
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
       >
         {children}
       </Drawer>
@@ -39,6 +41,8 @@ const NavDrawer = (props) => {
         anchor={"bottom"}
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        onClick={toggleDrawer(false)}
+        onKeyDown={toggleDrawer(false)}
       >
         {children}
       </Drawer>

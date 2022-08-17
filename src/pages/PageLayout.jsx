@@ -23,7 +23,7 @@ const PageLayout = () => {
   const performances = useRef(getPerformances());
 
   const useStyles = makeStyles((theme) => ({
-    layout: {
+    pageLayout: {
       width: "100%",
       maxWidth: "100%",
       overflowX: "hidden",
@@ -48,13 +48,14 @@ const PageLayout = () => {
   const classes = useStyles();
 
   const toggleDrawer = (openState) => (event) => {
+    console.log("I am toggled");
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
-
+    console.log(openState);
     setDrawerOpen(openState);
   };
 
@@ -64,7 +65,7 @@ const PageLayout = () => {
 
   return (
     <Router>
-      <div className={classes.layout}>
+      <div className={classes.pageLayout}>
         <NavBar
           lightMode={lightMode}
           drawerOpen={drawerOpen}

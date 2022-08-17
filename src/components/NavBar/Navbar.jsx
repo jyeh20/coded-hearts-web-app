@@ -17,12 +17,6 @@ const Navbar = (props) => {
   const { lightMode, drawerOpen, setDrawerOpen, toggleDrawer } = props;
 
   const useStyles = makeStyles((theme) => ({
-    layout: {
-      width: "100%",
-      maxWidth: "100%",
-      overflowX: "hidden",
-    },
-
     sidebar: {
       width: "20vw",
       height: "100%",

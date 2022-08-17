@@ -28,8 +28,7 @@ const NavbarItem = (props) => {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleRoute = async () => {
-    await toggleDrawer(false);
+  const handleRoute = () => {
     history.push(`${link}`);
   };
 
