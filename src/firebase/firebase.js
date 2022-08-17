@@ -1,15 +1,15 @@
-import firebase from 'firebase'
+import firebase from "firebase";
 
 const app = firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+  apiKey: "AIzaSyCbs4fLmv0kOj_p2WC-B8JSbieYNh7s9PM",
+  authDomain: "eutectic-web-d44cd.firebaseapp.com",
+  projectId: "eutectic-web-d44cd",
+  storageBucket: "eutectic-web-d44cd.appspot.com",
+  messagingSenderId: "89660841204",
+  appId: "1:89660841204:web:e5306fa785e35ccdeed2a1",
+  measurementId: "G-63YW1T6X3L",
 });
 // Initialize Firebase
 firebase.analytics();
 
-export default app
+export default app;
