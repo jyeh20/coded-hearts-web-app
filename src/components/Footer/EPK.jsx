@@ -1,73 +1,68 @@
-import React from 'react'
+import React from "react";
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 const EPK = (props) => {
-  const { color } = props
+  const { color } = props;
 
   const useStyles = makeStyles((theme) => ({
-    layout: {
+    EPKLayout: {
       color: color,
       gridColumnStart: 3,
       gridColumnEnd: 4,
-      display: 'grid',
-      gridTemplateRows: '50% 50%',
-      margin: 'auto',
-      height: '80%',
-      width: '60%',
+      display: "grid",
+      gridTemplateRows: "50% 50%",
+      margin: "auto",
+      height: "80%",
+      width: "60%",
     },
 
     emailDiv: {
-      margin: 'auto',
+      margin: "auto",
       gridRowStart: 1,
       gridRowEnd: 2,
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
     },
 
     epk: {
       color: color,
-      margin: 'auto',
+      margin: "auto",
       gridRowStart: 2,
       gridRowEnd: 3,
-      fontFamily: 'Cambay',
-      fontSize: '2vh',
-      textDecoration: 'underline'
+      fontFamily: "Cambay",
+      fontSize: "2vh",
+      textDecoration: "underline",
     },
 
     text: {
-      margin: 'auto',
-      fontFamily: 'Cambay',
-      fontSize: '2vh',
-    }
-  }))
-  const classes = useStyles()
+      margin: "auto",
+      fontFamily: "Cambay",
+      fontSize: "2vh",
+    },
+
+    "@media (max-width: 767px)": {
+      EPKLayout: {
+        width: "100%",
+      },
+    },
+  }));
+  const classes = useStyles();
 
   return (
-    <div className={classes.layout}>
+    <div className={classes.EPKLayout}>
       <div className={classes.emailDiv}>
-        <Typography
-          className={classes.text}
-        >
-          Email
-        </Typography>
-        <Typography
-          className={classes.text}
-        >
-          EutecticBand@gmail.com
-        </Typography>
+        <Typography className={classes.text}>Email</Typography>
+        <Typography className={classes.text}>CodedHearts@gmail.com</Typography>
       </div>
-      <Button
-        href="/epk"
-        className={classes.epk}
-      >
+      <Button href="/epk" className={classes.epk}>
         Our EPK
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default EPK
+export default EPK;
