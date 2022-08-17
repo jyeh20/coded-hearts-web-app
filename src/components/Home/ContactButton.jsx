@@ -1,35 +1,45 @@
-import React from 'react'
+import React from "react";
 
-import colors from '../../scripts/colors'
+import colors from "../../scripts/colors";
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
-import Button from '@material-ui/core/Button'
+import Button from "@material-ui/core/Button";
 
-import MailIcon from '@material-ui/icons/Mail'
+import MailIcon from "@material-ui/icons/Mail";
 
 const ContactButton = (props) => {
-  const { iconColor } = props
+  const { iconColor } = props;
   const useStyles = makeStyles((theme) => ({
     container: {
-      margin: 'auto',
-      width: '30vw',
-      marginBottom: '4vh',
+      margin: "auto",
+      width: "30vw",
+      marginBottom: "4vh",
     },
 
     button: {
-      margin: 'auto',
+      margin: "auto",
       backgroundColor: colors.blue,
       color: iconColor,
-      width: '30vw',
-      height: '8vh',
-      borderRadius: '10px',
-      '&:hover': {
-        backgroundColor: colors.hoverBlue
-      }
+      width: "30vw",
+      height: "8vh",
+      borderRadius: "10px",
+      "&:hover": {
+        backgroundColor: colors.hoverBlue,
+      },
     },
-  }))
-  const classes = useStyles()
+
+    "@media (max-width: 767px)": {
+      container: {
+        width: "60vw",
+        marginBottom: "2vh",
+      },
+      button: {
+        width: "60vw",
+      },
+    },
+  }));
+  const classes = useStyles();
 
   return (
     <div className={classes.container}>
@@ -41,7 +51,7 @@ const ContactButton = (props) => {
         Contact Us
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default ContactButton
+export default ContactButton;
