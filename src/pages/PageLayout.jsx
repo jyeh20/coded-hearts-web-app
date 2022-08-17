@@ -1,67 +1,66 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from "react";
 
-import colors from '../scripts/colors'
-import firebaseFunctions from '../firebase/firebaseUtil'
-import links from '../scripts/links'
+import colors from "../scripts/colors";
+import firebaseFunctions from "../firebase/firebaseUtil";
+import links from "../scripts/links";
 
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from "@material-ui/core/styles";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import NavBar from '../components/NavBar/Navbar'
-import Home from './Home'
-import Contact from './Contact';
-import EPK from './EPK';
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import NavBar from "../components/NavBar/Navbar";
+import Home from "./Home";
+import Contact from "./Contact";
+import EPK from "./EPK";
 
 const PageLayout = () => {
   // lightMode vs darkMode
-  const { getPerformances } = firebaseFunctions
-  const [lightMode, setLightMode] = useState(false)
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const performances = useRef(getPerformances())
+  const { getPerformances } = firebaseFunctions;
+  const [lightMode, setLightMode] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const performances = useRef(getPerformances());
 
   const useStyles = makeStyles((theme) => ({
     layout: {
-      width: '100%',
-      maxWidth: '100%',
-      overflowX: 'hidden',
+      width: "100%",
+      maxWidth: "100%",
+      overflowX: "hidden",
     },
 
     sidebar: {
-      width: '20vw',
-      height: '100%',
+      width: "20vw",
+      height: "100%",
       backgroundColor: lightMode ? colors.sidebarLight : colors.sidebarDark,
-      color: lightMode ? colors.sidebarDark : colors.sidebarLight
+      color: lightMode ? colors.sidebarDark : colors.sidebarLight,
     },
 
     sidebarTitle: {
-      fontFamily: 'Cambay',
-      fontSize: '4vh',
-      textAlign: 'center',
-      margin: 'auto',
-      marginTop: '2vh',
-      marginBottom: '3vh',
-    }
-  }))
-  const classes = useStyles()
+      fontFamily: "Cambay",
+      fontSize: "4vh",
+      textAlign: "center",
+      margin: "auto",
+      marginTop: "2vh",
+      marginBottom: "3vh",
+    },
+  }));
+  const classes = useStyles();
 
   const toggleDrawer = (openState) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
     setDrawerOpen(openState);
   };
 
-  const BGColor = lightMode ? colors.white : colors.black
-  const tableColor = lightMode ? colors.lightGrey : colors.darkGrey
-  const iconColor = lightMode ? colors.black : colors.white
+  const BGColor = lightMode ? colors.white : colors.black;
+  const tableColor = lightMode ? colors.lightGrey : colors.darkGrey;
+  const iconColor = lightMode ? colors.black : colors.white;
 
   return (
     <Router>
@@ -70,6 +69,7 @@ const PageLayout = () => {
           lightMode={lightMode}
           drawerOpen={drawerOpen}
           toggleDrawer={toggleDrawer}
+          setDrawerOpen={setDrawerOpen}
         />
         <Header
           bgColor={BGColor}
@@ -85,7 +85,7 @@ const PageLayout = () => {
             render={() => (
               <Home
                 lightMode={lightMode}
-                tableColor = {tableColor}
+                tableColor={tableColor}
                 bgColor={BGColor}
                 iconColor={iconColor}
                 videoLink={links.featuredVideo}
@@ -119,7 +119,7 @@ const PageLayout = () => {
         <Footer bgColor={BGColor} iconColor={iconColor} />
       </div>
     </Router>
-  )
-}
+  );
+};
 
-export default PageLayout
+export default PageLayout;
